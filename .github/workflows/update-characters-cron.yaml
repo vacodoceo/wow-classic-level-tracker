@@ -1,0 +1,14 @@
+name: Trigger update characters
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Trigger update characters
+    runs-on: ubuntu-latest
+    steps:
+      - name: cURL request
+        run: curl -X POST -d {} https://wow-level-tracker-v2.vercel.app/api/update-characters
