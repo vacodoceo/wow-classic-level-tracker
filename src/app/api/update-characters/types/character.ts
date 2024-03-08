@@ -1,7 +1,6 @@
 export type Character = {
-  levelerName: string;
-  realm: string;
   id: number;
+  realm: string;
   level: number;
   faction: string;
   race: string;
@@ -9,14 +8,15 @@ export type Character = {
   name: string;
   completedQuests: number;
   imageURL: string | null;
+  lastLogin: Date;
 };
 
 export type LevelRecord = {
   level: number;
-  timestamp: string;
+  timestamp: Date;
 };
 
 export type CharacterWithLevelRecords = Character & {
-  LevelRecords: LevelRecord[];
+  levelRecords: LevelRecord[];
   levelingScore: number;
 };

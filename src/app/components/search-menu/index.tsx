@@ -1,6 +1,6 @@
 "use client";
 
-import { SearchContext } from "@/context/search-provider";
+import { SearchContext } from "@/app/context/search-provider";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import { useContext } from "react";
 import { useMediaQuery } from "react-responsive";

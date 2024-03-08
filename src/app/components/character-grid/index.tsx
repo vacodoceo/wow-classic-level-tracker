@@ -1,9 +1,9 @@
 "use client";
 
 import { CharacterWithLevelRecords } from "@/app/api/update-characters/types/character";
-import { SearchContext } from "@/context/search-provider";
 import { useContext, useMemo } from "react";
 import { CharacterCard } from "./character-card";
+import { SearchContext } from "@/app/context/search-provider";
 
 export const CharacterGrid = ({
   characters,
@@ -16,7 +16,6 @@ export const CharacterGrid = ({
       const matchers = [
         character.name.toLowerCase(),
         character.class.toLowerCase(),
-        character.levelerName.toLowerCase(),
       ];
 
       return matchers

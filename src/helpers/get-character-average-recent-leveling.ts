@@ -1,15 +1,16 @@
-import { CharacterWithLevelRecords } from "@/app/api/update-characters/types/character";
-
-export const getCharacterAverageRecentLeveling = (
-  character: CharacterWithLevelRecords
-): number => {
-  const newestRecord = character.LevelRecords.slice(-1)[0];
-  const threeDaysBeforeOrOldestRecord = character.LevelRecords.slice(
-    -3 * 24
+export const getCharacterAverageRecentLeveling = (character: {
+  levelRecords: {
+    level: number;
+    timestamp: Date;
+  }[];
+}): number => {
+  const newestRecord = character.levelRecords.slice(-1)[0];
+  const threeDaysBeforeOrOldestRecord = character.levelRecords.slice(
+    -3 * 24,
   )[0];
 
   return (
     ((newestRecord.level - threeDaysBeforeOrOldestRecord.level) * 100_000_000) /
-    (Date.now() - new Date(threeDaysBeforeOrOldestRecord.timestamp).getTime())
+    (Date.now() - threeDaysBeforeOrOldestRecord.timestamp.getTime())
   );
 };

@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, Dispatch, SetStateAction, useState } from "react";
+import { createContext, useState } from "react";
 
 export const SearchContext = createContext({
   searchValue: "",

@@ -20,7 +20,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-[#0e1015]">
         <nav className="flex h-16 items-center justify-center text-white">
           <span className="text-lg font-bold tracking-wide">
-            WoW Level Tracker
+            WoW Classic Level Tracker
           </span>
         </nav>
         {children}
@@ -28,7 +28,7 @@ export default function RootLayout({
           Made with 🤍 by
           <Link
             className="ml-1 underline"
-            href="https://github.com/vacodoceo/next13"
+            href="https://github.com/vacodoceo/wow-classic-level-tracker"
           >
             Verner
           </Link>

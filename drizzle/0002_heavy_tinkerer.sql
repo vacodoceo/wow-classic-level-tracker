@@ -1,0 +1,1 @@
+ALTER TABLE "level_record" ALTER COLUMN "level" SET DATA TYPE integer USING level::integer;

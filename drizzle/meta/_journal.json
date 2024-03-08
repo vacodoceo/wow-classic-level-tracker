@@ -1,0 +1,48 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1709938994690,
+      "tag": "0000_sturdy_xavin",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1709939314662,
+      "tag": "0001_parched_baron_zemo",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1709940021358,
+      "tag": "0002_heavy_tinkerer",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1709941711047,
+      "tag": "0003_plain_barracuda",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1709942038691,
+      "tag": "0004_magical_the_liberteens",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1709950672291,
+      "tag": "0005_lazy_juggernaut",
+      "breakpoints": true
+    }
+  ]
+}

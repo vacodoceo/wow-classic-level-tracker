@@ -1,16 +1,20 @@
-import { getCharacters } from "./get-characters";
-import { getSheetCharacters } from "./get-sheet-characters";
+import { db } from "@/db";
 import { getToken } from "./get-token";
 import { storeCharacters } from "./store-characters";
 import { storeCharactersLevelRecord } from "./store-characters-level-record";
+import { getUpdatedCharacters } from "./get-updated-characters";
+
+export const dynamic = "force-dynamic";
 
 export async function POST() {
   const token = await getToken();
-  const sheetCharacters = await getSheetCharacters();
-  const characters = await getCharacters({ sheetCharacters, token });
+  const characters = await db.query.characters.findMany();
+  const updatedCharacters = await getUpdatedCharacters({ characters, token });
 
-  const storedRecordsPromise = storeCharactersLevelRecord(characters);
-  const storedCharactersPromise = storeCharacters(characters);
+  if (updatedCharacters.length === 0) return new Response();
+
+  const storedRecordsPromise = storeCharactersLevelRecord(updatedCharacters);
+  const storedCharactersPromise = storeCharacters(updatedCharacters);
 
   const [storedRecords, storedCharacters] = await Promise.all([
     storedRecordsPromise,

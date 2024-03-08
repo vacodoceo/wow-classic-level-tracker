@@ -10,7 +10,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import resolveConfig from "tailwindcss/resolveConfig";
-import tailwindConfig from "@/../tailwind.config.js";
+import tailwindConfig from "../../../../tailwind.config.cjs";
 import { useMemo } from "react";
 import { formatClassName } from "@/helpers/format-character-name";
 import { DateTime } from "luxon";
@@ -28,14 +28,12 @@ export const CharacterLevelChart = ({
 
   const formattedClass = useMemo(
     () => formatClassName(character.class),
-    [character.class]
+    [character.class],
   );
 
-  const data = character.LevelRecords.map((levelRecord) => ({
+  const data = character.levelRecords.map((levelRecord) => ({
     level: levelRecord.level,
-    timestamp: DateTime.fromISO(levelRecord.timestamp, {
-      zone: "utc",
-    }).valueOf(),
+    timestamp: levelRecord.timestamp,
   }));
 
   const xAxisDomain = [
@@ -46,7 +44,7 @@ export const CharacterLevelChart = ({
   const xAxisTicks = times(8, (index) =>
     DateTime.now()
       .minus({ days: index * 2 })
-      .valueOf()
+      .valueOf(),
   ).filter((_, i) => isBigScreen || i % 2 === 0);
 
   return (
@@ -98,10 +96,10 @@ const CustomTooltip = ({
   payload: {
     value: number;
   }[];
-  label: number;
+  label: Date;
 }) => {
   if (active && payload && payload.length) {
-    const timestamp = DateTime.fromMillis(label);
+    const timestamp = DateTime.fromJSDate(label);
     const formattedTimestamp = timestamp.toFormat("MMMM dd, HH:mm");
 
     return (
