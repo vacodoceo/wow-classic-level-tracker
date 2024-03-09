@@ -16,7 +16,7 @@ async function getCharacters(): Promise<CharacterWithLevelRecords[]> {
   });
 
   const filteredCharacters = characters.filter(
-    (character) => character.levelRecords.length > 1,
+    (character) => character.levelRecords.length > 0,
   );
 
   const characterWithLevelingData = filteredCharacters.map((character) => {
