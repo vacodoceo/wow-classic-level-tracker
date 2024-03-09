@@ -11,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: cURL request
-        run: curl -X POST -d {} https://wow-level-tracker-v2.vercel.app/api/update-characters
+        run: curl -X POST -L https://wow-classic-level-tracker.vercel.app/api/update-characters
