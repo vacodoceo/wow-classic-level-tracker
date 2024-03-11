@@ -35,7 +35,7 @@ export const CharacterCard = ({
 
             <span className="mt-1 flex items-center gap-1 text-xs text-gray-400">
               <ClockIcon height={12} className="mb-0.5" />
-              <span className="hidden sm:inline">Última conexión </span>
+              <span>Última conexión </span>
               {DateTime.fromJSDate(character.lastLogin).toRelative()}
             </span>
           </div>
