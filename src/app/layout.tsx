@@ -5,8 +5,8 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
 export const metadata = {
-  title: "WoW Level Tracker ",
-  description: "Track your WoW characters level for Andy's 3E ",
+  title: "WoW Classic Level Tracker",
+  description: "Track your WoW Classic characters levels over time.",
 };
 
 const inter = Inter({ subsets: ["latin"] });
