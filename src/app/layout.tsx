@@ -2,6 +2,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import Link from "next/link";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 export const metadata = {
   title: "WoW Level Tracker ",
@@ -34,6 +35,7 @@ export default function RootLayout({
           </Link>
         </footer>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
