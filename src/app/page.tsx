@@ -38,7 +38,7 @@ const Home = async () => {
   const characters = await getCharacters();
 
   return (
-    <main className="mx-auto max-w-screen-lg space-y-8">
+    <main className="mx-auto max-w-screen-lg space-y-4 sm:space-y-8">
       <SearchProvider>
         <SearchMenu />
         <CharacterGrid characters={characters} />
