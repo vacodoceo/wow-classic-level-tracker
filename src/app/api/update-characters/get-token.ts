@@ -1,12 +1,13 @@
 import { ClientCredentials } from "simple-oauth2";
+import { env } from "@/env";
 
 const client = new ClientCredentials({
   client: {
-    id: process.env.BLIZZARD_CLIENT_ID as string,
-    secret: process.env.BLIZZARD_CLIENT_SECRET as string,
+    id: env.BLIZZARD_CLIENT_ID,
+    secret: env.BLIZZARD_CLIENT_SECRET,
   },
   auth: {
-    tokenHost: process.env.OAUTH_TOKEN_HOST || "https://us.battle.net",
+    tokenHost: env.OAUTH_TOKEN_HOST || "https://us.battle.net",
   },
 });
 

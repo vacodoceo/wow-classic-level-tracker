@@ -8,6 +8,9 @@ export const env = createEnv({
    */
   server: {
     POSTGRES_URL: z.string().url(),
+    BLIZZARD_CLIENT_ID: z.string(),
+    BLIZZARD_CLIENT_SECRET: z.string(),
+    OAUTH_TOKEN_HOST: z.string().optional(),
   },
   /*
    * Environment variables available on the client (and server).
@@ -23,5 +26,8 @@ export const env = createEnv({
    */
   runtimeEnv: {
     POSTGRES_URL: process.env.POSTGRES_URL,
+    BLIZZARD_CLIENT_ID: process.env.BLIZZARD_CLIENT_ID,
+    BLIZZARD_CLIENT_SECRET: process.env.BLIZZARD_CLIENT_SECRET,
+    OAUTH_TOKEN_HOST: process.env.OAUTH_TOKEN_HOST,
   },
 });
